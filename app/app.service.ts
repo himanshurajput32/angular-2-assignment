@@ -7,13 +7,16 @@ import {Task} from "./todo";
 
 @Injectable()
 export class AppService{
-
+static taskArray:Task[]=[];
 tasks:Task[]=[];
-  create(task:Task){
-   this.tasks.push(task);
+  createTask(task:Task){
+   AppService.taskArray.push(task);
   }
 
-  done(task:Task){
+  doneTask(task:Task){
   this.tasks.pop();
+  }
+  showTasks(){
+    return AppService.taskArray;
   }
 }

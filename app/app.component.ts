@@ -1,9 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppService} from "./app.service";
+import {Task} from "./todo";
 
 @Component({
   selector: 'my-app',
   templateUrl:'./app/app.component.html',
+  providers:[AppService],
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
+task:Task=new Task();
+tasks:Task[];
+  constructor(private service:AppService){
 
 }
+  ngOnInit(): void {
+  }
+
+}
+

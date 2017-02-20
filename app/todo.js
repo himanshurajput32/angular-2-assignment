@@ -4,9 +4,10 @@
  */
 var Task = (function () {
     function Task() {
+        this.id = null;
         this.title = '';
         this.description = '';
-        this.date = '';
+        this.date = null;
         this.priority = '';
     }
     return Task;

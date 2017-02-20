@@ -16,12 +16,16 @@ var AppService = (function () {
     function AppService() {
         this.tasks = [];
     }
-    AppService.prototype.create = function (task) {
-        this.tasks.push(task);
+    AppService.prototype.createTask = function (task) {
+        AppService.taskArray.push(task);
     };
-    AppService.prototype.done = function (task) {
+    AppService.prototype.doneTask = function (task) {
         this.tasks.pop();
     };
+    AppService.prototype.showTasks = function () {
+        return AppService.taskArray;
+    };
+    AppService.taskArray = [];
     AppService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
