@@ -2,15 +2,15 @@
 /**
  * Created by knoldus on 17/2/17.
  */
-var Task = (function () {
-    function Task() {
+var TaskComponent = (function () {
+    function TaskComponent() {
         this.id = null;
         this.title = '';
         this.description = '';
-        this.date = null;
+        this.date = '';
         this.priority = '';
     }
-    return Task;
+    return TaskComponent;
 }());
-exports.Task = Task;
+exports.TaskComponent = TaskComponent;
 //# sourceMappingURL=todo.js.map

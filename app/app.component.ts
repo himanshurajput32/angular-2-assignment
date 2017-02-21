@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AppService} from "./app.service";
-import {Task} from "./todo";
+import {TaskComponent} from "./todo";
 
 @Component({
   selector: 'my-app',
@@ -8,8 +8,7 @@ import {Task} from "./todo";
   providers:[AppService],
 })
 export class AppComponent implements OnInit {
-task:Task=new Task();
-tasks:Task[];
+task:TaskComponent=new TaskComponent();
   constructor(private service:AppService){
 
 }

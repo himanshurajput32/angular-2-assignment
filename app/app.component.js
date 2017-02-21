@@ -14,7 +14,7 @@ var todo_1 = require("./todo");
 var AppComponent = (function () {
     function AppComponent(service) {
         this.service = service;
-        this.task = new todo_1.Task();
+        this.task = new todo_1.TaskComponent();
     }
     AppComponent.prototype.ngOnInit = function () {
     };

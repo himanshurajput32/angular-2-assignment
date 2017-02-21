@@ -20,9 +20,10 @@ var AppService = (function () {
         AppService.taskArray.push(task);
     };
     AppService.prototype.doneTask = function (task) {
-        this.tasks.pop();
+        AppService.taskArray.pop();
     };
     AppService.prototype.showTasks = function () {
+        //return AppService.taskArray;
         return AppService.taskArray;
     };
     AppService.taskArray = [];

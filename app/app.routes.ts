@@ -2,20 +2,19 @@
  * Created by knoldus on 17/2/17.
  */
 import {Routes} from '@angular/router'
-import {ShowTask} from "./app.showTask";
-import {CreateTask} from "./app.createTask";
-import {AppComponent} from "./app.component";
-import {ShowTaskForm} from "./app.showTaskForm";
+import {ShowTaskComponent} from "./app.showTask";
+import {CreateTaskComponent} from "./app.createTask";
+import {ShowTaskFormComponent} from "./app.showTaskForm";
 export const routes:Routes=[{
   path:'create',
-  component: CreateTask
+  component: CreateTaskComponent,
 },
   {
     path: 'show',
-    component: ShowTask
+    component: ShowTaskComponent,
   },
   {
     path:'editForm',
-    component:ShowTaskForm
+    component:ShowTaskFormComponent,
   }
   ];

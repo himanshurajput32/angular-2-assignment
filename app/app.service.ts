@@ -1,22 +1,23 @@
-
 /**
  * Created by knoldus on 17/2/17.
  */
 import {Injectable} from "@angular/core";
-import {Task} from "./todo";
-
+import {TaskComponent} from "./todo";
 @Injectable()
-export class AppService{
-static taskArray:Task[]=[];
-tasks:Task[]=[];
-  createTask(task:Task){
-   AppService.taskArray.push(task);
+export class AppService {
+  static taskArray: TaskComponent[] = [];
+  tasks: TaskComponent[] = [];
+
+  createTask(task: TaskComponent) {
+    AppService.taskArray.push(task);
   }
 
-  doneTask(task:Task){
-  this.tasks.pop();
+  doneTask(task: TaskComponent) {
+    AppService.taskArray.pop();
   }
-  showTasks(){
+
+  showTasks() {
+    //return AppService.taskArray;
     return AppService.taskArray;
   }
 }

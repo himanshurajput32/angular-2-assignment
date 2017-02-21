@@ -7,6 +7,6 @@ import {Component} from "@angular/core";
   templateUrl : "./app/createTask.html",
   styleUrls : ['']
 })
-export class ShowTaskForm{
+export class ShowTaskFormComponent{
 
 }

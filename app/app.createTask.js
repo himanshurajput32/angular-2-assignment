@@ -14,25 +14,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var todo_1 = require("./todo");
 var app_service_1 = require("./app.service");
-var CreateTask = (function () {
-    function CreateTask(service) {
+var CreateTaskComponent = (function () {
+    function CreateTaskComponent(service) {
         this.service = service;
-        this.task = new todo_1.Task();
+        this.task = new todo_1.TaskComponent();
     }
-    CreateTask.prototype.ngOnInit = function () {
+    CreateTaskComponent.prototype.ngOnInit = function () {
     };
-    CreateTask.prototype.submit = function () {
-        this.service.create(this.task);
+    CreateTaskComponent.prototype.submit = function () {
+        this.service.createTask(this.task);
     };
-    CreateTask = __decorate([
+    CreateTaskComponent = __decorate([
         core_1.Component({
             selector: 'create',
             templateUrl: "./app/createTask.html",
             styleUrls: ['']
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService])
-    ], CreateTask);
-    return CreateTask;
+    ], CreateTaskComponent);
+    return CreateTaskComponent;
 }());
-exports.CreateTask = CreateTask;
+exports.CreateTaskComponent = CreateTaskComponent;
 //# sourceMappingURL=app.createTask.js.map

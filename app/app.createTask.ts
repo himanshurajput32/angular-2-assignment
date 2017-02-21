@@ -2,15 +2,15 @@
  * Created by knoldus on 17/2/17.
  */
 import {Component, OnInit} from "@angular/core";
-import {Task} from "./todo";
+import {TaskComponent} from "./todo";
 import {AppService} from "./app.service";
 @Component({
   selector : 'create',
   templateUrl : "./app/createTask.html",
   styleUrls : ['']
 })
-export class CreateTask implements OnInit{
-  task=new Task();
+export class CreateTaskComponent implements OnInit{
+  task:TaskComponent=new TaskComponent();
   constructor(private service:AppService) {
   }
   ngOnInit(){
@@ -18,7 +18,7 @@ export class CreateTask implements OnInit{
   }
 
   submit() {
-    this.service.create(this.task)
+    this.service.createTask(this.task);
   }
 
 

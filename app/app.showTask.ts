@@ -1,12 +1,19 @@
 /**
  * Created by knoldus on 17/2/17.
  */
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {TaskComponent} from "./todo";
 @Component({
   selector : 'show',
   templateUrl : "./app/showTask.html",
-  styleUrls : ['']
+  styleUrls : [''],
 })
-export class ShowTask{
+export class ShowTaskComponent implements OnInit{
+  tasks:TaskComponent[];
+  ngOnInit(): void {
+
+  }
+
+
 
 }

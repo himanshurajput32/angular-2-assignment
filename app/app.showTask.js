@@ -12,18 +12,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by knoldus on 17/2/17.
  */
 var core_1 = require("@angular/core");
-var ShowTask = (function () {
-    function ShowTask() {
+var ShowTaskComponent = (function () {
+    function ShowTaskComponent() {
     }
-    ShowTask = __decorate([
+    ShowTaskComponent.prototype.ngOnInit = function () {
+    };
+    ShowTaskComponent = __decorate([
         core_1.Component({
             selector: 'show',
             templateUrl: "./app/showTask.html",
-            styleUrls: ['']
+            styleUrls: [''],
         }), 
         __metadata('design:paramtypes', [])
-    ], ShowTask);
-    return ShowTask;
+    ], ShowTaskComponent);
+    return ShowTaskComponent;
 }());
-exports.ShowTask = ShowTask;
+exports.ShowTaskComponent = ShowTaskComponent;
 //# sourceMappingURL=app.showTask.js.map

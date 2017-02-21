@@ -24,7 +24,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes), forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, app_createTask_1.CreateTask, app_showTask_1.ShowTask, app_showTaskForm_1.ShowTaskForm],
+            declarations: [app_component_1.AppComponent, app_createTask_1.CreateTaskComponent, app_showTask_1.ShowTaskComponent, app_showTaskForm_1.ShowTaskFormComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [app_service_1.AppService]
         }), 

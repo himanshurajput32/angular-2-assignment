@@ -12,18 +12,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by knoldus on 17/2/17.
  */
 var core_1 = require("@angular/core");
-var ShowTaskForm = (function () {
-    function ShowTaskForm() {
+var ShowTaskFormComponent = (function () {
+    function ShowTaskFormComponent() {
     }
-    ShowTaskForm = __decorate([
+    ShowTaskFormComponent = __decorate([
         core_1.Component({
             selector: 'editForm',
             templateUrl: "./app/createTask.html",
             styleUrls: ['']
         }), 
         __metadata('design:paramtypes', [])
-    ], ShowTaskForm);
-    return ShowTaskForm;
+    ], ShowTaskFormComponent);
+    return ShowTaskFormComponent;
 }());
-exports.ShowTaskForm = ShowTaskForm;
+exports.ShowTaskFormComponent = ShowTaskFormComponent;
 //# sourceMappingURL=app.showTaskForm.js.map
