@@ -4,7 +4,6 @@
  */
 var TaskComponent = (function () {
     function TaskComponent() {
-        this.id = null;
         this.title = '';
         this.description = '';
         this.date = '';

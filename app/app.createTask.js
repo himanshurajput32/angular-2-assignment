@@ -14,15 +14,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var todo_1 = require("./todo");
 var app_service_1 = require("./app.service");
+var router_1 = require("@angular/router");
 var CreateTaskComponent = (function () {
-    function CreateTaskComponent(service) {
+    function CreateTaskComponent(service, router, route) {
         this.service = service;
+        this.router = router;
+        this.route = route;
         this.task = new todo_1.TaskComponent();
     }
     CreateTaskComponent.prototype.ngOnInit = function () {
     };
-    CreateTaskComponent.prototype.submit = function () {
-        this.service.createTask(this.task);
+    CreateTaskComponent.prototype.createTask = function () {
+        var _this = this;
+        this.service.addTask(this.task).subscribe(function (data) {
+            _this.router.navigate(['show']);
+        }, function (err) {
+            alert(err);
+        });
     };
     CreateTaskComponent = __decorate([
         core_1.Component({
@@ -30,7 +38,7 @@ var CreateTaskComponent = (function () {
             templateUrl: "./app/createTask.html",
             styleUrls: ['']
         }), 
-        __metadata('design:paramtypes', [app_service_1.AppService])
+        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router, router_1.ActivatedRoute])
     ], CreateTaskComponent);
     return CreateTaskComponent;
 }());

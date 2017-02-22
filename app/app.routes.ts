@@ -4,7 +4,6 @@
 import {Routes} from '@angular/router'
 import {ShowTaskComponent} from "./app.showTask";
 import {CreateTaskComponent} from "./app.createTask";
-import {ShowTaskFormComponent} from "./app.showTaskForm";
 export const routes:Routes=[{
   path:'create',
   component: CreateTaskComponent,
@@ -12,9 +11,4 @@ export const routes:Routes=[{
   {
     path: 'show',
     component: ShowTaskComponent,
-  },
-  {
-    path:'editForm',
-    component:ShowTaskFormComponent,
-  }
-  ];
+  }];

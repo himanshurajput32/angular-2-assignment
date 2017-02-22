@@ -12,24 +12,87 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by knoldus on 17/2/17.
  */
 var core_1 = require("@angular/core");
+require('rxjs/add/operator/map');
+var http_1 = require("@angular/http");
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/operator/catch');
+require('rxjs/add/observable/of');
+require('rxjs/add/observable/throw');
 var AppService = (function () {
-    function AppService() {
-        this.tasks = [];
+    function AppService(http) {
+        this.http = http;
     }
-    AppService.prototype.createTask = function (task) {
-        AppService.taskArray.push(task);
+    AppService.prototype.addTask = function (task) {
+        var _this = this;
+        var jsonHeader = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        5;
+        return this.http.post('http://localhost:9000/add', task, { headers: jsonHeader })
+            .map(function (data) {
+            return _this.extractData(data);
+        })
+            .catch(function (e) {
+            return _this.handleError(e);
+        });
     };
-    AppService.prototype.doneTask = function (task) {
-        AppService.taskArray.pop();
+    AppService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body;
     };
-    AppService.prototype.showTasks = function () {
-        //return AppService.taskArray;
-        return AppService.taskArray;
+    AppService.prototype.handleError = function (error) {
+        var errMsg;
+        try {
+            if (JSON.parse(error._body).message) {
+                errMsg = JSON.parse(error._body).message;
+            }
+            else {
+                errMsg = 'Something went wrong. Please try again later.';
+            }
+        }
+        catch (e) {
+            errMsg = 'Something went wrong. Please try again later.';
+        }
+        return Observable_1.Observable.throw(new Error(errMsg));
     };
-    AppService.taskArray = [];
+    AppService.prototype.getData = function () {
+        var jsonHeader = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        return this.http.get('http://localhost:9000/get/all', { headers: jsonHeader })
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    AppService.prototype.removeTask = function (id) {
+        var _this = this;
+        var jsonHeader = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        return this.http.get('http://localhost:9000/remove/' + id, { headers: jsonHeader })
+            .map(function (data) {
+            return _this.extractData(data);
+        })
+            .catch(function (e) {
+            return _this.handleError(e);
+        });
+    };
+    AppService.prototype.updateTask = function (task) {
+        var _this = this;
+        var jsonHeader = new http_1.Headers({
+            'Content-Type': 'application/json'
+        });
+        5;
+        return this.http.post('http://localhost:9000/update', task, { headers: jsonHeader })
+            .map(function (data) {
+            return _this.extractData(data);
+        })
+            .catch(function (e) {
+            return _this.handleError(e);
+        });
+    };
     AppService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AppService);
     return AppService;
 }());

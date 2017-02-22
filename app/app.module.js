@@ -15,18 +15,16 @@ var router_1 = require("@angular/router");
 var app_routes_1 = require("./app.routes");
 var app_createTask_1 = require("./app.createTask");
 var app_showTask_1 = require("./app.showTask");
-var app_showTaskForm_1 = require("./app.showTaskForm");
-var app_service_1 = require("./app.service");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes), forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, app_createTask_1.CreateTaskComponent, app_showTask_1.ShowTaskComponent, app_showTaskForm_1.ShowTaskFormComponent],
-            bootstrap: [app_component_1.AppComponent],
-            providers: [app_service_1.AppService]
+            imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.routes), forms_1.FormsModule, http_1.HttpModule],
+            declarations: [app_component_1.AppComponent, app_createTask_1.CreateTaskComponent, app_showTask_1.ShowTaskComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

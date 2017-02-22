@@ -19,25 +19,24 @@
   </div>
 </div>
 
-
-<div class="row" style="background-color: cadetblue;height: 50px;text-align: center">
+<div class="row" *ngFor="let task of tasks" style="background-color: cadetblue;height: 50px;text-align: center">
   <div class="col-md-2" style="background-color: antiquewhite;height: 50px">
-    <h2></h2>
+    <p>{{task.title}}</p>
   </div>
   <div class="col-md-2" style="background-color:lightskyblue;height: 50px">
-    <h2></h2>
+    <p>{{task.date}}</p>
   </div>
   <div class="col-md-4" style="background-color:ghostwhite;height: 50px">
-    <h2></h2>
+    <p>{{task.description}}</p>
   </div>
   <div class="col-md-2" style="background-color: darkkhaki;height: 50px">
-    <h2></h2>
+    <p>{{task.priority}}</p>
   </div>
   <div class="col-md-1" style="background-color:navajowhite;height: 50px">
-    <button >Done</button>
+    <button (click)="taskCompleted(task._id)">Done</button>
   </div>
   <div class="col-md-1" style="background-color: tomato;height: 50px">
-    <button>Edit</button>
+    <button (click)="editTask(task._id)">Edit</button>
   </div>
 </div>
 

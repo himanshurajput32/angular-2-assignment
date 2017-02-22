@@ -12,10 +12,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by knoldus on 17/2/17.
  */
 var core_1 = require("@angular/core");
+var app_service_1 = require("./app.service");
+var router_1 = require("@angular/router");
 var ShowTaskComponent = (function () {
-    function ShowTaskComponent() {
+    function ShowTaskComponent(service, router, route) {
+        this.service = service;
+        this.router = router;
+        this.route = route;
     }
     ShowTaskComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service.getData().subscribe(function (data) {
+            _this.tasks = data;
+        }, function (error) {
+            alert(error);
+        });
+    };
+    ShowTaskComponent.prototype.taskCompleted = function (id) {
+        var _this = this;
+        this.service.removeTask(id).subscribe(function (data) {
+            //this.router.navigate(['show']);
+        }, function (err) {
+            alert(err);
+        });
+        this.service.getData().subscribe(function (data) {
+            _this.tasks = data;
+        }, function (error) {
+            alert(error);
+        });
     };
     ShowTaskComponent = __decorate([
         core_1.Component({
@@ -23,7 +47,7 @@ var ShowTaskComponent = (function () {
             templateUrl: "./app/showTask.html",
             styleUrls: [''],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router, router_1.ActivatedRoute])
     ], ShowTaskComponent);
     return ShowTaskComponent;
 }());
