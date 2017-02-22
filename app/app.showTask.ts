@@ -2,7 +2,7 @@
  * Created by knoldus on 17/2/17.
  */
 import {Component, OnInit} from "@angular/core";
-import {TaskComponent} from "./todo";
+import {Task} from "./todo";
 import {AppService} from "./app.service";
 import {Router, ActivatedRoute} from "@angular/router";
 @Component({
@@ -10,10 +10,10 @@ import {Router, ActivatedRoute} from "@angular/router";
   templateUrl: "./app/showTask.html",
   styleUrls: [''],
 })
-export class ShowTaskComponent implements OnInit {
-  tasks: TaskComponent[];
+export class ShowTask implements OnInit {
+  tasks: Task[];
 
-  constructor(private service: AppService, private router: Router, private route: ActivatedRoute) {
+  constructor(private service: AppService, private router: Router) {
   }
 
   ngOnInit() {
@@ -36,6 +36,8 @@ export class ShowTaskComponent implements OnInit {
       alert(error)
     })
   }
-
+  editTask(id:string){
+   this.router.navigate(['edit',id]);
+  }
 
 }

@@ -14,13 +14,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var app_service_1 = require("./app.service");
 var router_1 = require("@angular/router");
-var ShowTaskComponent = (function () {
-    function ShowTaskComponent(service, router, route) {
+var ShowTask = (function () {
+    function ShowTask(service, router) {
         this.service = service;
         this.router = router;
-        this.route = route;
     }
-    ShowTaskComponent.prototype.ngOnInit = function () {
+    ShowTask.prototype.ngOnInit = function () {
         var _this = this;
         this.service.getData().subscribe(function (data) {
             _this.tasks = data;
@@ -28,7 +27,7 @@ var ShowTaskComponent = (function () {
             alert(error);
         });
     };
-    ShowTaskComponent.prototype.taskCompleted = function (id) {
+    ShowTask.prototype.taskCompleted = function (id) {
         var _this = this;
         this.service.removeTask(id).subscribe(function (data) {
             //this.router.navigate(['show']);
@@ -41,15 +40,18 @@ var ShowTaskComponent = (function () {
             alert(error);
         });
     };
-    ShowTaskComponent = __decorate([
+    ShowTask.prototype.editTask = function (id) {
+        this.router.navigate(['edit', id]);
+    };
+    ShowTask = __decorate([
         core_1.Component({
             selector: 'show',
             templateUrl: "./app/showTask.html",
             styleUrls: [''],
         }), 
-        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router, router_1.ActivatedRoute])
-    ], ShowTaskComponent);
-    return ShowTaskComponent;
+        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router])
+    ], ShowTask);
+    return ShowTask;
 }());
-exports.ShowTaskComponent = ShowTaskComponent;
+exports.ShowTask = ShowTask;
 //# sourceMappingURL=app.showTask.js.map

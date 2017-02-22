@@ -1,7 +1,7 @@
 /**
  * Created by knoldus on 17/2/17.
  */
-export class TaskComponent{
+export class Task{
   description:string;
   title:string;
   date:string;

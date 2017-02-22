@@ -2,18 +2,18 @@
  * Created by knoldus on 17/2/17.
  */
 import {Component, OnInit} from "@angular/core";
-import {TaskComponent} from "./todo";
+import {Task} from "./todo";
 import {AppService} from "./app.service";
-import {Router, ActivatedRoute} from "@angular/router";
+import {Router} from "@angular/router";
 @Component({
   selector : 'create',
   templateUrl : "./app/createTask.html",
   styleUrls : ['']
 })
-export class CreateTaskComponent implements OnInit{
+export class CreateTask implements OnInit{
 
-  task:TaskComponent=new TaskComponent();
-  constructor(private service:AppService,private router:Router,private route:ActivatedRoute) {
+  task:Task=new Task();
+  constructor(private service:AppService,private router:Router) {
   }
 
   ngOnInit(){

@@ -2,14 +2,14 @@
 /**
  * Created by knoldus on 17/2/17.
  */
-var TaskComponent = (function () {
-    function TaskComponent() {
+var Task = (function () {
+    function Task() {
         this.title = '';
         this.description = '';
         this.date = '';
         this.priority = '';
     }
-    return TaskComponent;
+    return Task;
 }());
-exports.TaskComponent = TaskComponent;
+exports.Task = Task;
 //# sourceMappingURL=todo.js.map

@@ -15,16 +15,15 @@ var core_1 = require("@angular/core");
 var todo_1 = require("./todo");
 var app_service_1 = require("./app.service");
 var router_1 = require("@angular/router");
-var CreateTaskComponent = (function () {
-    function CreateTaskComponent(service, router, route) {
+var CreateTask = (function () {
+    function CreateTask(service, router) {
         this.service = service;
         this.router = router;
-        this.route = route;
-        this.task = new todo_1.TaskComponent();
+        this.task = new todo_1.Task();
     }
-    CreateTaskComponent.prototype.ngOnInit = function () {
+    CreateTask.prototype.ngOnInit = function () {
     };
-    CreateTaskComponent.prototype.createTask = function () {
+    CreateTask.prototype.createTask = function () {
         var _this = this;
         this.service.addTask(this.task).subscribe(function (data) {
             _this.router.navigate(['show']);
@@ -32,15 +31,15 @@ var CreateTaskComponent = (function () {
             alert(err);
         });
     };
-    CreateTaskComponent = __decorate([
+    CreateTask = __decorate([
         core_1.Component({
             selector: 'create',
             templateUrl: "./app/createTask.html",
             styleUrls: ['']
         }), 
-        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router, router_1.ActivatedRoute])
-    ], CreateTaskComponent);
-    return CreateTaskComponent;
+        __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router])
+    ], CreateTask);
+    return CreateTask;
 }());
-exports.CreateTaskComponent = CreateTaskComponent;
+exports.CreateTask = CreateTask;
 //# sourceMappingURL=app.createTask.js.map

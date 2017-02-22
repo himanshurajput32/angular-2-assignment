@@ -2,7 +2,7 @@
  * Created by knoldus on 17/2/17.
  */
 import {Injectable} from "@angular/core";
-import {TaskComponent} from "./todo";
+import {Task} from "./todo";
 import 'rxjs/add/operator/map';
 import {Http, Headers} from "@angular/http";
 import {Observable} from 'rxjs/Observable';
@@ -15,7 +15,7 @@ export class AppService {
   constructor(private http: Http) {
   }
 
-  addTask(task: TaskComponent): Observable<any> {
+  addTask(task: Task): Observable<any> {
     let jsonHeader = new Headers({
       'Content-Type': 'application/json'
     });
@@ -74,12 +74,20 @@ export class AppService {
         return this.handleError(e)
       });
   }
-  updateTask(task:TaskComponent){
+
+  updateTask(task: Task, id: string) {
+    let obj = {
+      _id: id,
+      title: task.title,
+      description: task.description,
+      priority: task.priority,
+      date: task.date
+    }
     let jsonHeader = new Headers({
       'Content-Type': 'application/json'
     });
-    5
-    return this.http.post('http://localhost:9000/update', task,
+
+    return this.http.post('http://localhost:9000/update', obj,
       {headers: jsonHeader})
       .map(data => {
         return this.extractData(data)

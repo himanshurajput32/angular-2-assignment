@@ -76,13 +76,19 @@ var AppService = (function () {
             return _this.handleError(e);
         });
     };
-    AppService.prototype.updateTask = function (task) {
+    AppService.prototype.updateTask = function (task, id) {
         var _this = this;
+        var obj = {
+            _id: id,
+            title: task.title,
+            description: task.description,
+            priority: task.priority,
+            date: task.date
+        };
         var jsonHeader = new http_1.Headers({
             'Content-Type': 'application/json'
         });
-        5;
-        return this.http.post('http://localhost:9000/update', task, { headers: jsonHeader })
+        return this.http.post('http://localhost:9000/update', obj, { headers: jsonHeader })
             .map(function (data) {
             return _this.extractData(data);
         })
