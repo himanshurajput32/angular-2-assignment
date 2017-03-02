@@ -45,8 +45,9 @@ var ShowTask = (function () {
     };
     ShowTask = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'show',
-            templateUrl: "./app/showTask.html",
+            templateUrl: "./showTask.html",
             styleUrls: [''],
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router])

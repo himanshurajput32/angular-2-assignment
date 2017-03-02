@@ -6,8 +6,9 @@ import {Task} from "./todo";
 import {AppService} from "./app.service";
 import {Router} from "@angular/router";
 @Component({
+  moduleId: module.id,
   selector : 'create',
-  templateUrl : "./app/createTask.html",
+  templateUrl : "./createTask.html",
   styleUrls : ['']
 })
 export class CreateTask implements OnInit{

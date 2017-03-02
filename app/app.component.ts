@@ -3,8 +3,9 @@ import {AppService} from "./app.service";
 import {Task} from "./todo";
 
 @Component({
+  moduleId: module.id,
   selector: 'my-app',
-  templateUrl:'./app/app.component.html',
+  templateUrl:'./app.component.html',
   providers:[AppService],
 })
 export class AppComponent implements OnInit {

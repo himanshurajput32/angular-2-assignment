@@ -1,31 +1,34 @@
-import {AppComponent} from './app.component';
+/**
+ * Created by knoldus on 1/3/17.
+*/
+import {CreateTask} from './app.createTask';
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {By, BrowserModule}           from '@angular/platform-browser';
+import {By}           from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
-import {RouterOutletMap, Router} from '@angular/router';
+import { RouterOutletMap} from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
 import {RouterTestingModule} from "@angular/router/testing";
-import {AppService} from "./app.service";
 import {HttpModule} from "@angular/http";
-describe('AppComponent', function () {
+import {AppService} from "./app.service";
+
+describe('CreateTask', function () {
   let de: DebugElement;
-  let comp: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+  let comp: CreateTask;
+  let fixture: ComponentFixture<CreateTask>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [CreateTask],
       providers: [RouterOutletMap,AppService],
-      imports: [RouterTestingModule, CommonModule, FormsModule,HttpModule,BrowserModule]
+      imports: [RouterTestingModule, CommonModule, FormsModule, HttpModule]
 
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(CreateTask);
     comp = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
   });
@@ -33,3 +36,4 @@ describe('AppComponent', function () {
   it('should create component', () => expect(comp).toBeDefined());
 
 });
+

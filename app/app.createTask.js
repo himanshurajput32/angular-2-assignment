@@ -33,8 +33,9 @@ var CreateTask = (function () {
     };
     CreateTask = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'create',
-            templateUrl: "./app/createTask.html",
+            templateUrl: "./createTask.html",
             styleUrls: ['']
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService, router_1.Router])

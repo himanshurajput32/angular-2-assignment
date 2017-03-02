@@ -20,8 +20,9 @@ var AppComponent = (function () {
     };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            templateUrl: './app/app.component.html',
+            templateUrl: './app.component.html',
             providers: [app_service_1.AppService],
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService])

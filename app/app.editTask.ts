@@ -3,8 +3,9 @@ import {AppService} from "./app.service";
 import {Router, ActivatedRoute} from "@angular/router";
 import {Task} from "./todo";
 @Component({
+  moduleId: module.id,
   selector: 'create',
-  templateUrl: "./app/createTask.html",
+  templateUrl: "./createTask.html",
   styleUrls: ['']
 })
 export class EditTask implements OnInit {
